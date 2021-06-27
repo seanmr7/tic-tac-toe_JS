@@ -17,7 +17,8 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Lato', sans-serif;
+  color: #454249;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -26,7 +27,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
-  background-color: rgb(43, 155, 144);
+  background-color: #39EDDB;
 }
 ol, ul {
   list-style: none;
@@ -58,4 +59,44 @@ button {
   font-size: 16px;
 }
 
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
 
+#title {
+  text-align: center;
+  margin-bottom: .5em;
+  margin-top: .15em
+}
+
+#boardContainer {
+  display: grid;
+  background-color: #454249;
+  width: 750px;
+  height: 750px;
+  margin: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  column-gap: .5rem;
+  row-gap: .5rem;
+  justify-items: stretch;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.space {
+  font-weight: 400;
+  font-size: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.X {
+  background-color: #ED5551;
+}
+
+.O {
+  background-color: #45A4ED;
+}
