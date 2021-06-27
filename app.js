@@ -1,25 +1,51 @@
 
 const GameBoard = (function() {
   let gameboard = [
-    'X', 'O', 'X',
+    null, 'O', 'X',
     'O', 'X', 'O',
     'X', 'O', 'X'
   ];
 
   const boardContainer = document.getElementById('boardContainer')
 
-  render();
+  _render();
 
-  function render() {
-    // Creates divs for each element in the gameboard array and puts them into $board
-    gameboard.forEach(function(space) {
+  // Creates divs for each element in the gameboard array and puts them into $board
+  function _render() {
+    _clearBoard();
+    gameboard.forEach(function(space, index) {
       console.log(space);
       const boardspace = document.createElement('div');
       boardspace.classList.add("space", space);
       boardspace.innerText = space;
+      boardspace.setAttribute("data-index", index);
       boardContainer.appendChild(boardspace);
     })
   }
+
+  function _clearBoard() {
+    boardContainer.innerHTML = '';
+  }
+
+  // Resets the game board array to null values for use in other modules to restart the game.
+  function resetBoard() {
+    gameboard.forEach(function(space, index) { 
+      this[index] = null; 
+    }, gameboard);
+    _render();
+  }
+
+  // Overwrites a space in the game's board array and renders the updated board.
+  function updateSpace(index, token) {
+    if (!(token == "X" || token == "O")) {
+      return;
+    }
+    if (gameboard[index] == null) { gameboard[index] = token; }
+    else { console.log("Space not available") }
+    _render();
+  }
+
+  return {updateSpace, resetBoard}
 })();
 
 const Player = (name, token) => {
@@ -29,13 +55,7 @@ const Player = (name, token) => {
   return {getName, getToken}
 };
 
-const displayBoard = {
-
-}
-
 const PlayGame = (function() {
-
-  const board = GameBoard;
 
   console.log('Here comes the game')
 })();
