@@ -37,6 +37,8 @@ const GameBoard = (function() {
 
   // Overwrites a space in the game's board array and renders the updated board.
   function updateSpace(index, token) {
+
+    console.log(token);
     if (!(token == "X" || token == "O")) {
       return;
     }
@@ -45,7 +47,10 @@ const GameBoard = (function() {
     _render();
   }
 
-  return {updateSpace, resetBoard}
+  return {
+    updateSpace,
+    resetBoard 
+  }
 })();
 
 const Player = (name, token) => {
@@ -56,6 +61,31 @@ const Player = (name, token) => {
 };
 
 const PlayGame = (function() {
+  const playerOne = Player("Player1", "X");
+  const playerTwo = Player("Player2", "O");
+  let turns = 1;
 
-  console.log('Here comes the game')
+  gameboard = document.querySelectorAll('.space');
+  // Bind events
+  gameboard.forEach(function(space) {
+    index = space.getAttribute("data-index");
+    space.onclick = e => {
+      console.log(e.target)
+      takeTurn(space.getAttribute("data-index"));
+    }
+  })
+
+  function takeTurn(index) {
+    console.log(playerOne.getToken());
+    console.log(index);
+    GameBoard.updateSpace(index, playerOne.getToken());
+    turns +=1;
+  }
+
+  function doSomething(something)
+  {
+    alert(something)
+  }
+
+  return {playerOne, playerTwo, gameboard}
 })();

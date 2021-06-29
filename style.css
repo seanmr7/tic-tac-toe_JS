@@ -88,9 +88,9 @@ h1 {
 .space {
   font-weight: 400;
   font-size: 3.5rem;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   background-color: #39EDDB;
 }
 
