@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <title>Tic-Tac-Toe</title>
-  <meta name="author" content="">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Tic-Tac-Toe</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
 
-<body>
-  <h1 id="title">Tic-Tac-Toe</h1>
-  <div id="boardContainer">
-  </div>
-  
-  
-  <script src="app.js"></script>
-</body>
+  <body>
+    <h1 id="title">Tic-Tac-Toe</h1>
+    <div id="playerNames">
+      <form id="playerNameForm">
+          <div class="playerNameFields">
+            <div class="nameField">
+              <label for="PlayerX">X Player: </label>
+              <input type="text" id="playerX" placeholder="Joe">
+            </div>
+            <div class="nameField">          
+              <label for="PlayerO">O Player: </label>
+              <input type="text" id="playerO" placeholder="Steve">
+            </div>
+          </div>
+        <input type ="submit" value="Start Game" class="btn">
+      </form>
+    </div>
+    <div id="boardContainer">
+    </div>
+    <div id="gameOverContainer">
+      <div id="gameOverPopUp">
+        <button id="playAgainBtn" class="btn">Play Again?</button>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>

@@ -51,16 +51,24 @@ html {
   box-sizing: inherit;
 
 }
-button {
+.btn {
   background-color: rgb(245, 245, 245);
   border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
   padding: 15px 32px;
   text-align: center;
   font-size: 16px;
+  font-weight: 700;
 }
 
 h1 {
   font-size: 3.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
   font-weight: 700;
 }
 
@@ -70,7 +78,36 @@ h1 {
   margin-top: .15em
 }
 
+#playerNames {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+#playerNameForm {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-wrap: wrap; 
+}
+
+.playerNameFields {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.nameField {
+  margin: 0 2em;
+}
+
 #boardContainer {
+  visibility: hidden;
+  border: solid 1px #39EDDB;
   display: grid;
   background-color: #454249;
   width: 750px;
@@ -88,9 +125,9 @@ h1 {
 .space {
   font-weight: 400;
   font-size: 3.5rem;
-  /* display: flex;
+  display: flex;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
   background-color: #39EDDB;
 }
 
@@ -100,4 +137,32 @@ h1 {
 
 .O {
   background-color: #45A4ED;
+}
+
+#gameOverContainer {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(90, 90, 90, 0.5);
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+}
+
+#gameOverPopUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: honeydew;
+  height: 14%;
+  width: 33%;
+  border-radius: 5px;
+}
+
+#playAgainBtn {
+  background-color: rgba(177, 164, 164, 0.75);
 }
