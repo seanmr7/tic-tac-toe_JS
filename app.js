@@ -86,16 +86,19 @@ const PlayGame = (function() {
   let turns = 1;
 
   // Document queries
-  const startGame = document.getElementById("playerNameForm");
-  const playerNames = document
+  const startGameForm = document.getElementById("playerNameForm");
+  const playerContainer = document.getElementById("playerContainer");
+  const playerNameContainer = document.getElementById("playerNameContainer")
   const gameOverContainer = document.getElementById("gameOverContainer");
   const gameOverPopUp = document.getElementById("gameOverPopUp");
   const playAgainBtn = document.getElementById("playAgainBtn");
+  const resetBtn = document.getElementById("resetBtn");
   const boardContainer = document.getElementById("boardContainer");
 
   // Bind Events
-  startGame.addEventListener("submit", _startGame)
+  startGameForm.addEventListener("submit", _startGame)
   playAgainBtn.addEventListener("click", _resetGame)
+  resetBtn.addEventListener("click", _resetGame)
 
   function takeTurn(index) {
     GameBoard.updateSpaceArr(index, checkTurn())
@@ -127,10 +130,24 @@ const PlayGame = (function() {
     playerO.name = document.getElementById("playerO").value
 
     const playerXDiv = document.createElement("div");
+    playerXDiv.classList.add("nameField", "btn", "player")
+
     const playerODiv = document.createElement("div");
+    playerODiv.classList.add("nameField", "btn", "player")
+
+    const playerNameDiv = document.createElement("div");
+    playerNameDiv.classList.add("playerNameFields")
 
     playerXDiv.innerText = `Player X: ${playerX.name}`
     playerODiv.innerText = `Player O: ${playerO.name}`
+
+    startGameForm.style.display = "none"
+    resetBtn.style.display = "block"
+    
+    playerNameDiv.appendChild(playerXDiv)
+    playerNameDiv.appendChild(playerODiv)
+    playerNameContainer.appendChild(playerNameDiv)
+    
   }
 
   function _checkWin() {
@@ -172,6 +189,11 @@ const PlayGame = (function() {
     gameOverPopUp.removeChild(gameOverPopUp.childNodes[0])
     gameOverContainer.style.display = "none"
     boardContainer.style.display = "none"
+    resetBtn.style.display = "none"
+    playerNameContainer.innerHTML = ''
+    startGameForm.reset()
+    startGameForm.style.display = "flex"
+    
   }
   return {takeTurn, checkTurn, checkSpace}
 })();
