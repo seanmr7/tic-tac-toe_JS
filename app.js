@@ -88,7 +88,6 @@ const PlayGame = (function() {
 
   // Document queries
   const startGameForm = document.getElementById("playerNameForm");
-  const playerContainer = document.getElementById("playerContainer");
   const playerNameContainer = document.getElementById("playerNameContainer")
   const gameOverContainer = document.getElementById("gameOverContainer");
   const gameOverPopUp = document.getElementById("gameOverPopUp");
