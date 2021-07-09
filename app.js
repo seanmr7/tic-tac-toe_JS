@@ -81,6 +81,7 @@ const Player = (name, token) => {
 };
 
 const PlayGame = (function() {
+  // Create player placeholders and turn tracker
   const playerX = Player("Player1", "X");
   const playerO = Player("Player2", "O");
   let turns = 1;
@@ -126,15 +127,17 @@ const PlayGame = (function() {
   function _startGame(event) {
     event.preventDefault()
     boardContainer.style.visibility = "visible"
+    // Assign player names from form submission
     playerX.name = document.getElementById("playerX").value
     playerO.name = document.getElementById("playerO").value
 
+    // Create divs for player name fields
     const playerXDiv = document.createElement("div");
     playerXDiv.classList.add("nameField", "btn", "player")
-
     const playerODiv = document.createElement("div");
     playerODiv.classList.add("nameField", "btn", "player")
 
+    // Create container to hold name fields above.
     const playerNameDiv = document.createElement("div");
     playerNameDiv.classList.add("playerNameFields")
 
