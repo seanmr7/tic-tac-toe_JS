@@ -190,7 +190,7 @@ const PlayGame = (function() {
     GameBoard.resetBoard()
     gameOverPopUp.removeChild(gameOverPopUp.childNodes[0])
     gameOverContainer.style.display = "none"
-    boardContainer.style.display = "none"
+    boardContainer.style.visibility = "hidden"
     resetBtn.style.display = "none"
     playerNameContainer.innerHTML = ''
     startGameForm.reset()

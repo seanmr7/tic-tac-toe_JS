@@ -123,7 +123,6 @@ h2 {
 
 #boardContainer {
   visibility: hidden;
-  border: solid 1px #39EDDB;
   display: grid;
   background-color: #454249;
   width: 715px;
